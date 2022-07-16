@@ -26,7 +26,7 @@ const createManyPeople = (arrayOfPeople, done) => {
   {name: "Wendy", age: 42, favoriteFoods: ["wine"]}
 ];
 
-var createManyPeople = function(arrayOfPeople, done) {
+var people = function(arrayOfPeople, done) {
   Person.create(arrayOfPeople, function (err, people) {
     if (err) return console.log(err);
     done(null, people);
