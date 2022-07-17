@@ -25,9 +25,9 @@ const createManyPeople = (arrayOfPeople, done) => {
     ]
 // create people objects at once
   var createPeople = function(arrayOfPeople, done){
-    Person.create(arrayOfPeople, function(err, people){
+    Person.create(arrayOfPeople, function(err, arrayOfPeople){
       if (err) console.log(err)
-      done(null, people)
+      done(null, arrayOfPeople)
     })
   }
 };
