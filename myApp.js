@@ -20,18 +20,16 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  var arrayOfPeople = [
-  {name: "Merissa", age: 23, favoriteFoods: ["Tacos"]},
-  {name: "Audrey", age: 23, favoriteFoods: ["burgers"]},
-  {name: "Wendy", age: 42, favoriteFoods: ["wine"]}
-];
 
-var people = function(arrayOfPeople, done) {
-  Person.create(arrayOfPeople, function (err, data) {
-    if (err) return console.log(err);
-    done(null, data);
-  });
-};
+  var arrayOfPeople = [{name:'Merissa', age:23, favoriteFoods: ['Strawberries']}, {name:'Audrey', age: 20, favoriteFoods: ['Salad']}, {name: 'Wendy', age: 42, favoriteFoods: ['wine', 'burgers']}
+    ]
+// create people objects at once
+  var createPeople = function(arrayOfPeople, done){
+    Person.create(arrayOfPeople, function(err, people){
+      if (err) console.log(err)
+      done(null, people)
+    })
+  }
 };
 
 const findPeopleByName = (personName, done) => {
